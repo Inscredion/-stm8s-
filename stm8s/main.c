@@ -36,10 +36,8 @@ void key_init(){
 
 void main(void)
 {
-      led_conf();
-     Init_ADC();
-
-
+   led_conf();
+   Init_ADC();
    key_init();
 
    LED_delay_on;
@@ -50,7 +48,7 @@ void main(void)
    delay_us(400);
    LED_amp_off;
    delay_us(400);
-     LED_amp_off;
+   LED_amp_off;
    LED_delay_on;
    delay_us(400);
    LED_delay_off;
@@ -59,16 +57,14 @@ void main(void)
    delay_us(400);
    LED_amp_off;
    delay_us(400);
-     LED_amp_off;
-
+   LED_amp_off;
 
    confirm = GPIO_ReadInputPin(GPIOA,GPIO_PIN_2);
 
-
-   while(confirm != RESET)                              //设定延时时间  1-8秒；
+   while(confirm != RESET)                              //璁惧畾寤舵椂鏃堕棿  1-8绉掞紱
    {
-      delay_us(1000);
-      LED_delay_on;
+     delay_us(1000);
+     LED_delay_on;
      add = GPIO_ReadInputPin(GPIOA,GPIO_PIN_1);
      confirm = GPIO_ReadInputPin(GPIOA,GPIO_PIN_2);
      sub = GPIO_ReadInputPin(GPIOB,GPIO_PIN_4);
@@ -99,7 +95,7 @@ void main(void)
    delay_us(3000);
    confirm = GPIO_ReadInputPin(GPIOA,GPIO_PIN_2);
 
-  while(confirm != RESET)                              //设定延时时间  1-8秒；
+  while(confirm != RESET)                              //璁惧畾寤舵椂鏃堕棿  1-8绉掞紱
    {
      delay_us(1000);
      LED_delay_off;
@@ -118,26 +114,17 @@ void main(void)
        }
      }
    }
-
-
-
+ 
 while(1)
 {
-
-
-
       led_all_off();
       LED_delay_on;
       LED_amp_on;
       delay_s(1);
       LED_delay_off;
       LED_amp_off;
-
       ADC1_StartConversion();
-
       delay_s(1);
-
-
      while(ADC1_GetFlagStatus(ADC1_FLAG_EOC)!=RESET)
       {
         adc = ADC1_GetConversionValue();
@@ -177,18 +164,9 @@ while(1)
                }
           led_all_off();
         }
-
       }
-
   }
 }
-
-
-
-
-
-
-
 
 #ifdef USE_FULL_ASSERT
 
