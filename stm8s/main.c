@@ -79,16 +79,6 @@ void main(void)
            led_num(delay);
          }
       }
-//      if(sub ==RESET)
-//     {
-//       if(delay!=1)
-//       delay--;
-//       else
-//         { delay = 1;
-//           led_all_off();
-//           led_num(delay);
-//         }
-//      }
    }
 
    led_all_off();
@@ -146,9 +136,7 @@ while(1)
                     else cnt++;
                     adc =ADC1_GetConversionValue();
                   }
-//                cnt = 0;
-//          real =max/((128*amp-1)/8);
-//          led_control(real);
+
                while(cnt<delay*1000)
                {
                    delay_us(5);
